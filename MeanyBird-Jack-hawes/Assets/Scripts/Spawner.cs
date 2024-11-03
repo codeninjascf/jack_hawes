@@ -10,12 +10,18 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("InstantiateObjects", 1f, 4f);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(5, Random.Range(-height, height), 0);    
+    }
 
+    void InstantiateObjects()
+    {
+        Instantiate(Spikes, transform.position, transform.rotation);
     }
 }
