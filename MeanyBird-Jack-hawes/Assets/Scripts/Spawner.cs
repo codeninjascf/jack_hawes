@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject Spikes;
 
+
     public float height;
     // Start is called before the first frame update
     void Start()
