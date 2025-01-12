@@ -6,13 +6,15 @@ public class Spawner : MonoBehaviour
 {
     public float objectspeed = 8f;
     private List<GameObject> _activeObject;
+
     private void FixedUpdate()
     {
     }
     // Start is called before the first frame update
     void Start()
     {
-        _activeObjects = new List<GameObject>();
+        _activeObject = new List<GameObject>();
+        StartCoroutine(Spawn());
     }
     // Update is called once per frame
     void Update()
