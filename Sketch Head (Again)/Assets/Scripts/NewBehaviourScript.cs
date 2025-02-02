@@ -16,5 +16,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float movement = moveSpeed * Input.GetAxis("Horisontal");
+        Player.Turn(_rigedbody,movement);
+        _rigedbody.position += movement * Time.deltaTime * Vector2.right;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (_rigedbody.velocity.y <= 0)
+            _rigedbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
 }
+ 
