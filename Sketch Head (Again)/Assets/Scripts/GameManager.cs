@@ -59,8 +59,10 @@ public class GameManager : MonoBehaviour
             _highestPlatform = newHeight;
         }
 
+ 
         if (!_gameOver && player.transform.position.y + _playerHeight < mainCamera.position.y - ScreenBounds.y)
         {
+           
             _gameOver = true;
             gameOverMenu.SetActive(true);
             player.gameObject.SetActive(false);
