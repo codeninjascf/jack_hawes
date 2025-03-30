@@ -36,7 +36,7 @@ public class PlayerControls : MonoBehaviour
             ||collision.gameObject.tag =="lowSpike"
             ||collision.gameObject.tag =="Ground")
         {
-            Time.timeScale = 0;
+            GameObject.Find("GameController").GetComponent<GameController>().GameOver();
         }
     }
            
