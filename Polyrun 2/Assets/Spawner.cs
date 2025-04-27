@@ -10,7 +10,8 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _activeObjects = new List<GameObject>();
+        StartCoroutine(spawn());
     }
 
     // Update is called once per frame
@@ -31,6 +32,11 @@ public class Spawner : MonoBehaviour
 
         challengeObject.transform.position = new Vector3(GameManager.ScreenBounds.x, 0);
         _activeObjects.Add(challengeObject);
-        challengeObject script = challengeObject.
+        ChallengeObject script = challengeObject.GetComponent<ChallengeObject>();
+        yield return new WaitForSeconds(script.challengeTime);
+        StartCoroutine(spawn());
+        yield return new WaitForSeconds(5);
+
     }
 }
+        
