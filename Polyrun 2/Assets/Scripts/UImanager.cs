@@ -29,6 +29,19 @@ public class UImanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scoretext.text = GameManager.Score.ToString();
+        if (!_GameOver && GameManager.GameOver)
+        {
+            _GameOver = true;
+            scoretext.gameObject.SetActive(false);
+            gameOverMenu.SetActive(true);
+            if (GameManager.Score > _highScore)
+            {
+                _highScore = GameManager.Score;
+                PlayerPrefs.SetInt("HighScore", _highScore);
+            }
+            
+            
+        }
     }
 }
