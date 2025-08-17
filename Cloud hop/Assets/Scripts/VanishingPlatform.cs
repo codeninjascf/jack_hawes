@@ -26,7 +26,7 @@ public class VanishingPlatform : MonoBehaviour
             while(_SpriteRenderer.color.a > 0)
             {
 
-                _SpriteRenderer.color = new Color(_SpriteRenderer.color.r,_SpriteRenderer.color.g)
+                _SpriteRenderer.color = new Color(_SpriteRenderer.color.r,_SpriteRenderer.color.g,
                     _SpriteRenderer.color.b, _SpriteRenderer.color.a - 1 / 255f);
                 yield return new WaitForSeconds(vanishTime / 255f);
             }
@@ -37,7 +37,9 @@ public class VanishingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("player"))
-            startCorout
+        if (collision.gameObject.CompareTag("player"))
+        {
+            StartCoroutine(Vanish());
+        }
     }
 }
