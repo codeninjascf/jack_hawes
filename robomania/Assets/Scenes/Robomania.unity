@@ -183,6 +183,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54bb41ba49fc0b42992c848cd0b5431, type: 3}
+--- !u!1 &141894424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 781141947717642194, guid: e54bb41ba49fc0b42992c848cd0b5431, type: 3}
+  m_PrefabInstance: {fileID: 141894423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466283802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,6 +271,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 10
+--- !u!1 &466283805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1275642260383887277, guid: bdde90feb5bfa6647a873f8afee9ed6d, type: 3}
+  m_PrefabInstance: {fileID: 466283802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,9 +382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  crosshair: {fileID: 0}
-  bulletStart: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  crosshair: {fileID: 141894424}
+  bulletStart: {fileID: 466283805}
+  bulletPrefab: {fileID: 106756398545683830, guid: 40b7be0ce11beaa48bd7f0e3d3eaa32b, type: 3}
 --- !u!1 &529818351
 GameObject:
   m_ObjectHideFlags: 0

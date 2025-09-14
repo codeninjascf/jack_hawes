@@ -25,7 +25,11 @@ public class Shooting : MonoBehaviour
         crosshair.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
         if(Input.GetButtonDown("Fire1") && !GameManager.GameOver)
         {
-            Vector3 toCrosshair = transform.position - bulletStart.transform.position;
+            Vector3 toCrosshair = crosshair.transform.position - bulletStart.transform.position;
+            float rotation = Mathf.Atan2(toCrosshair.y, toCrosshair.x);
+            bulletStart.transform.rotation = Quaternion.Euler(0, 0, rotation * Mathf.Rad2Deg);
+            GameObject projectile = Instantiate(bulletPrefab, bulletStart.transform.position, bulletStart.transform.rotation);
+            projectile.GetComponent<Rigidbody2D>().velocity = bulletSpeed * toCrosshair.normalized;
         }
     }
 }
