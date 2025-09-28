@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rigidbody.velocity = Direction * movespeed * Vector2.right;
     }
 
     // Update is called once per frame
@@ -50,5 +50,20 @@ public class EnemyMovement : MonoBehaviour
         
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+
+        {
+            _rigidbody.velocity = Direction * movespeed * Vector2.right;
+            _rigidbody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
+        }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            _rigidbody.velocity = Direction * movespeed * Vector2.left;
+            _rigidbody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
+        }
     }
 }
