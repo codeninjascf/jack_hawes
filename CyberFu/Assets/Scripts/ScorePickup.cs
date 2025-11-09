@@ -1,8 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPickup : MonoBehaviour
+public class ScorePickup : MonoBehaviour
 {
-    public int healAmount = 2;
+    public int scoreAmount = 1;
     public float rotateSpeed = 50f;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,10 @@ public class HealthPickup : MonoBehaviour
         if (other.CompareTag("Player"))
 
         {
-            other.GetComponent<PlayerHealth>().Add(healAmount);
+            GameManager.Score += scoreAmount;
             Destroy(gameObject);
         }
     }
 
-
-
 }
+

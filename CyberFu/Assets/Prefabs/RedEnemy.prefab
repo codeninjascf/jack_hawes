@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757986c007634725a56cda8e6b29c07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 2
   deathParticles: {fileID: 469618944626369992, guid: 3ba1c4ab1be9f7a4c9ba21c724a792e9, type: 3}
 --- !u!1 &3537918723572985119
 GameObject:
