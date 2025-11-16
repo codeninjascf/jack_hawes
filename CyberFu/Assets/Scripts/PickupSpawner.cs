@@ -21,6 +21,25 @@ public class PickupSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      if(!_startedspawning && !GameManager.GameOver)
+        {
+            _startedspawning = true;
+            StartCoroutine(SpawnPickup());
+        }
+    }
+
+    IEnumerator SpawnPickup()
+    {
+        while(!GameManager.GameOver)
+        { 
+            yield return new WaitForSeconds(spawnDelay);
+            int pickupIndex = Random.Range(0, pickups.Length);
+            float x = Random.Range(xBounds.x, xBounds.y);
+            float z = Random.Range(zBounds.x, zBounds.y);
+
+            Vector3 spawnPosistion = new(x, 0, z);
+
+            Instantiate(pickups[pickupIndex], spawnPosistion, Quaternion.identity);
+        }
     }
 }
