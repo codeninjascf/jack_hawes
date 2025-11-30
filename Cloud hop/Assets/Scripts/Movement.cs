@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
         {
             _canJump = false;
         }
-         if(_canJump && Input.GetButtonDown("Jump"))
+         if(_canJump && MobileInput.Tap)
         {
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float movement = moveSpeed * Input.GetAxis("Horizontal");
+        float movement = moveSpeed * MobileInput.tilt("Horizontal");
         transform.position += movement * Time.deltaTime * Vector3.right;
     }
 }

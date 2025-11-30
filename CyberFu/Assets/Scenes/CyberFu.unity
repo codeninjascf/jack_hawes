@@ -1262,9 +1262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 12
-  xBounds: {x: 0, y: 0}
-  zBounds: {x: 0, y: 0}
-  pickups: []
+  xBounds: {x: -18, y: 18}
+  zBounds: {x: -2, y: 2}
+  pickups:
+  - {fileID: 8815610282684912744, guid: abbc32d01deba0742a25b4a7a563f1ad, type: 3}
+  - {fileID: 3752048703931533440, guid: b1961dd7fd7bc094596480e2d90b9931, type: 3}
 --- !u!1 &859602868
 GameObject:
   m_ObjectHideFlags: 0
